@@ -26,10 +26,17 @@ The AWS Lambda was generated with [AWS Lambda](https://aws.amazon.com/lambda/) N
 
 Run the following command to create the .zip file:
 
-Windows: `7z a -tzip -r OneSignal-NodeJS-AWS-Lambda-Sample.zip .`
-OSX: `zip -r OneSignal-NodeJS-AWS-Lambda-Sample.zip .`
+- Windows: `7z a -tzip -r OneSignal-NodeJS-AWS-Lambda-Sample.zip .`
 
-Open the .zip file in your AWS Lambda console.
+- OSX: `zip -r OneSignal-NodeJS-AWS-Lambda-Sample.zip .`
+
+Upload the .zip file in your AWS Lambda console.
+
+**Note:** You will have to create enviroment variables to run the AWS Lambda (Configuration->Enviroment Variables).
+
+Keys for the enviroment variables:
+- ONESIGNAL_APP_ID: The OneSignal App ID.
+- REST_API_KEY: The OneSignal API Key.
 
 ### Tokens Builder
 
