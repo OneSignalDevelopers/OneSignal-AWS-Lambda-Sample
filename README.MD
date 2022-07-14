@@ -89,7 +89,7 @@ const {id} = await client.createNotification(notification);
 
 Create a email notification and send it to your users of your app.
 
-**Note**: You will need a [setup](https://documentation.onesignal.com/docs/email-quickstart) an email provider to send emails.
+**Note**: You will need to [setup](https://documentation.onesignal.com/docs/email-quickstart) an email provider to send emails.
 
 - [Postman](https://www.postman.com/onesignaldevs/workspace/onesignal-api/request/16845437-c4f3498f-fd80-4304-a6c1-a3234b923f2c)
 - [REST API Reference](https://documentation.onesignal.com/reference/email-channel-properties)
