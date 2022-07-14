@@ -45,7 +45,7 @@ To authentificate the app, you will need to use your OneSignal REST API key. Cre
 ```javascript
  const app_key_provider = {
      getToken() {
-         return process.env.REST_API_KEY';
+         return process.env.REST_API_KEY;
      }
  };
 ```
@@ -109,6 +109,7 @@ View the details from a push notification you have sent using OneSignal.
 
 - [Postman](https://www.postman.com/onesignaldevs/workspace/onesignal-api/request/16845437-6c96ecf0-5882-4eac-a386-0d0cabc8ecd2)
 - [REST API Reference](https://documentation.onesignal.com/reference#view-notification)
+- [NodeJS SDK Client Reference](https://documentation.onesignal.com/docs/node-client-sdk#getting-notifications)
 
 ```javascript
 const response = await client.getNotification(ONESIGNAL_APP_ID, id);
