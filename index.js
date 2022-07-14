@@ -25,22 +25,33 @@ export const handler = async (event) => {
     const client = new OneSignal.DefaultApi(configuration);
 
     /**
-     * CREATE NOTIFICATION
+     * CREATE PUSH NOTIFICATION
      */
     const notification = new OneSignal.Notification();
     notification.app_id = ONESIGNAL_APP_ID;
     notification.included_segments = ['Subscribed Users'];
     notification.contents = {
-    en: "Hello OneSignal!"
+        en: "Hello OneSignal!"
     };
 
-    const {id} = await client.createNotification(notification);
+    let {id} = await client.createNotification(notification);
 
+    /**
+     * CREATE EMAIL NOTIFICATION
+     */
+    const email = new OneSignal.Notification();
+    email.app_id = ONESIGNAL_APP_ID;
+    email.included_segments = ['Subscribed Users'];
+    email.contents.email_subject = 'Welcome to OneSignal!',
+    email.contents.email_body = '<html><head><body><h1>Welcome to OneSignal NodeJS SDK<h1></body></html>';
+
+    await client.createNotification(email);
+    
     /**
      * VIEW NOTIFICATION  
      */
-    const response = await client.getNotification(ONESIGNAL_APP_ID, id);
-    console.log(response);
-    return response;
+     const response = await client.getNotification(ONESIGNAL_APP_ID, id);
+     console.log(response);
+     return response;
 };
 
