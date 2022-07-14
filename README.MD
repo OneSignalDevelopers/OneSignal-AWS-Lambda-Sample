@@ -9,18 +9,18 @@
   </a>
 </p>
 
-This sample app demonstrates how to send push and email notifications to your app users using the [OneSignal NodeJS SDK library](https://github.com/OneSignal/node-onesignal) and [AWS Lambdas](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
+This sample app demonstrates how to send push and email notifications to your app users using the [OneSignal NodeJS API Library](https://github.com/OneSignal/node-onesignal) and [AWS Lambdas](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
 
 The NodeJS code was generated with [NodeJS](https://nodejs.org/de/blog/release/v14.16.0/) version v14.16.0
 
-Take a look at the [OneSignal documentation](https://documentation.onesignal.com/docs) to learn how to integrate OneSignal into your project. After you have integrated OneSignal into your application, you can use NodeJS to send push notification using the OneSignal NodeJS SDK Library.
+Take a look at the [OneSignal documentation](https://documentation.onesignal.com/docs) to learn how to integrate OneSignal into your project. After you have integrated OneSignal into your application, you can use NodeJS to send push notification using the OneSignal NodeJS API Library.
 
 The AWS Lambda was generated with [AWS Lambda](https://aws.amazon.com/lambda/) NodeJS version v16.X.X.
 
 
-## NodeJS SDK Library Setup
+## NodeJS API Library Setup
 
-- Install the OneSignal NodeJS SDK by running `npm install @onesignal/node-onesignal --save` (npm install).
+- Install the OneSignal NodeJS API library by running `npm install @onesignal/node-onesignal --save` (npm install).
 
 - Now, create the .zip from the project to be able to upload it to AWS Lambda.
 
@@ -88,7 +88,7 @@ const {id} = await client.createNotification(notification);
 ### Create Email Notification
 
 Create a email notification and send it to your users of your app.
-
+ 
 **Note**: You will need to [setup](https://documentation.onesignal.com/docs/email-quickstart) an email provider to send emails.
 
 - [Postman](https://www.postman.com/onesignaldevs/workspace/onesignal-api/request/16845437-c4f3498f-fd80-4304-a6c1-a3234b923f2c)
@@ -99,7 +99,7 @@ Create a email notification and send it to your users of your app.
     email.app_id = ONESIGNAL_APP_ID;
     email.included_segments = ['Subscribed Users'];
     email.contents.email_subject = 'Welcome to OneSignal!',
-    email.contents.email_body = '<html><head><body><h1>Welcome to OneSignal NodeJS SDK<h1></body></html>';
+    email.contents.email_body = '<html><head><body><h1>Welcome to OneSignal NodeJS API Library<h1></body></html>';
 
     await client.createNotification(email);
 ```
@@ -109,7 +109,7 @@ View the details from a push notification you have sent using OneSignal.
 
 - [Postman](https://www.postman.com/onesignaldevs/workspace/onesignal-api/request/16845437-6c96ecf0-5882-4eac-a386-0d0cabc8ecd2)
 - [REST API Reference](https://documentation.onesignal.com/reference#view-notification)
-- [NodeJS SDK Client Reference](https://documentation.onesignal.com/docs/node-client-sdk#getting-notifications)
+- [NodeJS API Library Reference](https://documentation.onesignal.com/docs/node-client-sdk#getting-notifications)
 
 ```javascript
 const response = await client.getNotification(ONESIGNAL_APP_ID, id);
